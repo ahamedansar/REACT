@@ -1,13 +1,13 @@
 
 import './App.css'
-import Basic from './Functional-Components/Basic'
-import Home from './Functional-Components/hooks/useContext/theme/Home'
-import { ThemeProvider } from './Functional-Components/hooks/useContext/theme/ThemeContext'
-import UseEff from './Functional-Components/hooks/useEffect/UseEff'
-import UserList from './Functional-Components/hooks/useEffect/UserList'
-import Counter from './Functional-Components/hooks/useState/Counter'
-import Props from './Functional-Components/Props'
-import State from './Functional-Components/state'
+// import Basic from './Functional-Components/Basic'
+// import Home from './Functional-Components/hooks/useContext/theme/Home'
+// import { ThemeProvider } from './Functional-Components/hooks/useContext/theme/ThemeContext'
+// import UseEff from './Functional-Components/hooks/useEffect/UseEff'
+// import UserList from './Functional-Components/hooks/useEffect/UserList'
+// import Counter from './Functional-Components/hooks/useState/Counter'
+// import Props from './Functional-Components/Props'
+// import State from './Functional-Components/state'
 // import Welcome from './embedding-expression/Welcome'
 // import Basic from './basic'
 // import CallingFunction from './embedding-expression/CallingFunction'
@@ -35,9 +35,9 @@ function App() {
       {/* ----use context---- */}
       {/* ----1.theme---- */}
 
-      <ThemeProvider>
+      {/* <ThemeProvider>
        <Home/>
-      </ThemeProvider>
+      </ThemeProvider> */}
 
       
 
