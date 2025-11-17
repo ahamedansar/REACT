@@ -19,7 +19,9 @@
 // import CallingFunction from './embedding-expression/CallingFunction'
 // import Conditional from './embedding-expression/Conditional'
 
-import AllProducts from "./react-keys/AllProducts"
+import SimpleForm from "./form/simpleForm"
+
+// import AllProducts from "./react-keys/AllProducts"
 
 // import Items from "./react-keys/Items"
 
@@ -116,7 +118,11 @@ function App() {
 
           {/* ------react-keys----- */}
           {/* <Items/> */}
-          <AllProducts/>
+          {/* <AllProducts/> */}
+
+
+          {/* -----form----- */}
+          <SimpleForm/>
        
 
  
