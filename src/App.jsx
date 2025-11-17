@@ -13,14 +13,32 @@
 // import Counter from './Functional-Components/hooks/useState/Counter'
 // import Props from './Functional-Components/Props'
 // import State from './Functional-Components/state'
+// import Person from './embedding-expression/Person'
 // import Welcome from './embedding-expression/Welcome'
 // import Basic from './basic'
 // import CallingFunction from './embedding-expression/CallingFunction'
 // import Conditional from './embedding-expression/Conditional'
 
-import { Route, Routes } from "react-router-dom"
-import Products from "./dynamic-routing/Products"
-import ProductDetail from "./dynamic-routing/ProductDetail"
+import AllProducts from "./react-keys/AllProducts"
+
+// import Items from "./react-keys/Items"
+
+// import { Route, Routes } from "react-router-dom"
+
+// import Home from './nested-routing/pages/Home'
+// import Navbar from './nested-routing/Navbar'
+// import About from './nested-routing/pages/About'
+// import Services from "./nested-routing/pages/Services"
+// import WebDev from "./nested-routing/pages/services/WebDev"
+// import AppDev from "./nested-routing/pages/services/AppDev"
+
+
+
+
+
+// import { Route, Routes } from "react-router-dom"
+// import Products from "./dynamic-routing/Products"
+// import ProductDetail from "./dynamic-routing/ProductDetail"
 
 
 
@@ -30,10 +48,11 @@ function App() {
   return (
     <>
       {/* -----------embedding-expression---------- */}
-      {/* <Basic />
-      <Welcome />
-      <CallingFunction/>
+      {/* <Basic /> */}
+      {/* <Welcome /> */}
+      {/* <CallingFunction/>
       <Conditional/> */}
+      {/* <Person/> */}
 
       {/* -----functional-components----- */}
       {/* <Basic/> */}
@@ -76,10 +95,29 @@ function App() {
 
       {/* ----2. Dynamic Routing---- */}
     
-        <Routes>
-          <Route path = '/' element = {<Products/>}/>
+        {/* <Routes>
+              <Route path = '/' element = {<Products/>}/>
           <Route path = '/products/:id' element = {<ProductDetail/>}/>
-        </Routes>
+        </Routes> */}
+
+
+          
+          
+          {/* <Navbar/>
+          <Routes>
+            <Route path='/' element = { <Home/> }/>
+            <Route path='/About' element = { <About/> }/>
+           <Route path="/service" element = {<Services/>}>
+            <Route path="web-dev" element = {<WebDev/>}/>
+            <Route path="app-dev" element = {<AppDev/>} />
+           </Route>
+          </Routes> */}
+
+
+          {/* ------react-keys----- */}
+          {/* <Items/> */}
+          <AllProducts/>
+       
 
  
 

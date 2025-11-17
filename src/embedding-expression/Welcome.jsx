@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './welcome.css'
 
 
@@ -7,7 +8,7 @@ const Welcome = () => {
   return (
     <div>
         <h2>hello {name} </h2>
-       <img src="" alt="" />
+     
     </div>
   )
 }
