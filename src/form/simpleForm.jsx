@@ -15,7 +15,7 @@ const SimpleForm = () => {
         alert('form submitted');
         console.log('form email', email);
     }
-}
+} 
 
 
     return (

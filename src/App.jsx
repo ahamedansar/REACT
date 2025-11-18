@@ -19,7 +19,9 @@
 // import CallingFunction from './embedding-expression/CallingFunction'
 // import Conditional from './embedding-expression/Conditional'
 
-import SimpleForm from "./form/simpleForm"
+import Form from "./form/Form"
+
+// import SimpleForm from "./form/simpleForm"
 
 // import AllProducts from "./react-keys/AllProducts"
 
@@ -122,7 +124,8 @@ function App() {
 
 
           {/* -----form----- */}
-          <SimpleForm/>
+          {/* <SimpleForm/> */}
+          <Form/>
        
 
  
