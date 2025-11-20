@@ -19,7 +19,7 @@
 // import CallingFunction from './embedding-expression/CallingFunction'
 // import Conditional from './embedding-expression/Conditional'
 
-import Form from "./form/Form"
+// import Form from "./form/Form"
 
 // import SimpleForm from "./form/simpleForm"
 
@@ -125,7 +125,11 @@ function App() {
 
           {/* -----form----- */}
           {/* <SimpleForm/> */}
-          <Form/>
+          {/* <Form/> */}
+
+
+
+          {/* -----local storage----- */}
        
 
  
