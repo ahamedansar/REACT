@@ -19,6 +19,8 @@
 // import CallingFunction from './embedding-expression/CallingFunction'
 // import Conditional from './embedding-expression/Conditional'
 
+// import JobApplicationForm from "./works/JobApplicationForm"
+
 import Crud from "./Local-storage/Crud"
 
 // import Form from "./form/Form"
@@ -128,6 +130,8 @@ function App() {
           {/* -----form----- */}
           {/* <SimpleForm/> */}
           {/* <Form/> */}
+
+          {/* <JobApplicationForm/> */}
 
 
 

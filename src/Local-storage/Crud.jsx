@@ -15,11 +15,26 @@ const Crud = () => {
     const [editMode, setEditMode] = useState(false);
     const [errors, setErrors] = useState({});
     const [isLoded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        const stored = localStorage.getItem("users");
+
+        if (stored) {
+            try {
+                const parsedUser = JSON.parse(stored)
+                setUsers(parsedUser)
+            } catch (error) {
+                console.log('Error parsing data', error);
+                localStorage.removeItem("users");//clear corrupted data
+
+            }
+        }
+        setIsLoaded(true)
+    }, []);
     //save users to localstorage (whenever user changes. only after initial load)
     useEffect(() => {
         if (isLoded) {//only save after initial load is completed
             localStorage.setItem("users", JSON.stringify(users))
-
 
         }
 
@@ -50,6 +65,68 @@ const Crud = () => {
         return newErrors;
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const validationErrors = validate();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+        if (editMode) {
+            setUsers(users.map(user => user.id === formData.id ? formData : user));
+            setEditMode(false);
+
+        } else {
+            const newUser = { ...formData, id: Date.now().toString() }
+            setUsers([...users, newUser])
+        }
+        setFormData({
+            id: '',
+            name: '',
+            email: '',
+            age: '',
+        })
+        setErrors({});
+    }
+    const handleEdit = (user) => {
+        setFormData(user);
+        setEditMode(true);
+
+    }
+
+    const handleCancel = () => {
+        setFormData({ id: '', name: '', email: '', age: '' });
+        setErrors({})
+        setEditMode(false);
+    }
+
+    const handleClearAll = () => {
+        if (window.confirm('Are you sure want to clear all data? this action can not be undeone')) {
+            setUsers([]);
+            //also clear the form  if in edit mode
+            if (editMode){
+            setFormData({ id: '', name: '', email: '', age: '' });
+            setErrors({})
+            setEditMode(false);
+            }
+        }
+
+    }
+
+
+    const handleDelete = (id) => {
+        const filteredUsers = users.filter((user) => user.id !== id);
+        setUsers(filteredUsers);
+
+        // Optional: If you are using LocalStorage
+        localStorage.setItem("users", JSON.stringify(filteredUsers));
+
+        // When deleting, reset form if the deleted item was being edited
+        setFormData({ id: '', name: '', email: '', age: '' });
+        setErrors({});
+        setEditMode(false);
+    };
+
 
 
 
@@ -57,7 +134,7 @@ const Crud = () => {
         <div className='formnew'>
             <h1>React  -  Crud</h1>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 {/* name */}
                 <div>
                     <input
@@ -83,7 +160,7 @@ const Crud = () => {
                 {/* age */}
                 <div>
                     <input
-                        type="number"
+                        type="text"
                         name='age'
                         value={formData.age}
                         placeholder='Your age'
@@ -94,11 +171,68 @@ const Crud = () => {
                 {editMode && (
                     <button
                         type='buttton'
-                        style={{ marginLeft: '10px' }}>Cancel</button>
+                        style={{ marginLeft: '10px' }}
+                        onClick={handleCancel}>Cancel</button>
                 )}
 
-
             </form>
+            {/* table design */}
+            <div style={{
+                display: 'flex', justifyContent: 'space-between',
+                alignItems: "center",
+                marginBottom: '10px'
+            }}>
+                <h2>UserList</h2>
+                {users.length > 0 && (
+                    <button style={{
+                        backgroundColor: 'red',
+                        color: 'white',
+                        border: 'none',
+                        padding: '8px 12px',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        marginLeft: '30px'
+
+
+                    }}
+                    onClick={handleClearAll}>
+                        clear all data
+                    </button>
+                )}
+            </div>
+            {/* table design */}
+            {users.length > 0 ? (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map(user => (
+                            <tr key={user.id}>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>{user.age}</td>
+                                <td>
+                                    <button onClick={() => handleEdit(user)}>Edit</button>
+                                    <button
+                                        style={{ marginLeft: '10px' }}
+                                        onClick={() => handleDelete(user.id)}
+                                    >Delete
+
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            ) : (
+                <p>no user added yet</p>
+            )}
         </div>
     )
 }
