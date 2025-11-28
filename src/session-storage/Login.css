@@ -1,0 +1,126 @@
+/* Reset */
+body, html {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Background with image + overlay */
+.app-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+/* Dark transparent overlay for clean contrast */
+.app-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Card */
+.card {
+  width: 350px;
+  max-width: 90%;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+}
+
+/* Heading */
+.title {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Messages */
+.message {
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #28a745;
+}
+
+.message.error {
+  color: #ff3d3d;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box; /* ⭐ FIXES the right-side spacing issue */
+}
+
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.2s;
+}
+
+/* Signup button - green */
+.signup-btn {
+  background: #2ecc71;
+  color: white;
+}
+.signup-btn:hover {
+  background: #27ae60;
+}
+
+/* Login button - blue */
+.login-btn {
+  background: #3498db;
+  color: white;
+}
+.login-btn:hover {
+  background: #2980b9;
+}
+
+/* Logout button - red */
+.logout-btn {
+  background: #e74c3c;
+  color: white;
+}
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+/* Switch text */
+.switch-text {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #444;
+}
+
+.switch-link {
+  color: #2980b9;
+  cursor: pointer;
+  text-decoration: underline;
+}

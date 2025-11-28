@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background image + overlay */
+body {
+  background: 
+    linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)),
+    url("https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=2070") no-repeat center/cover;
+  color: #f1f5f9;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Center page */
+.todo-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Glassmorphism card */
+.todo-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  padding: 32px 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.todo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+.todo-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Input row */
+.todo-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+/* Input fields now neon bluish */
+.todo-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.1);
+  color: #e2e8f0;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.todo-input::placeholder {
+  color: #cbd5e1;
+}
+
+.todo-input:focus {
+  border-color: #60a5fa;
+  background: rgba(255,255,255,0.2);
+  outline: none;
+}
+
+/* Buttons */
+.todo-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+}
+
+.add-btn:not(:disabled):hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(59,130,246,0.5);
+}
+
+/* Lists */
+.lists {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.list-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty {
+  color: #cbd5e1;
+}
+
+/* Task items */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.15);
+  padding: 12px 14px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.task-item:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  accent-color: #38bdf8;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  word-break: break-word;
+  color: #f8fafc;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Editing input */
+.task-edit-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.4);
+  font-size: 0.95rem;
+  margin-right: 10px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+/* Action buttons */
+.task-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.task-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Edit */
+.task-btn.edit {
+  background: #14b8a6;
+  color: #fff;
+}
+
+/* Delete */
+.task-btn.delete {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* Save */
+.task-btn.save {
+  background: #3b82f6;
+  color: #fff;
+}
+
+/* Cancel */
+.task-btn.cancel {
+  background: #6b7280;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .todo-card {
+    padding: 20px 15px;
+  }
+  .todo-title {
+    font-size: 1.6rem;
+  }
+  .task-btn {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+}

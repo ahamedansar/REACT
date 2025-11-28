@@ -19,9 +19,20 @@
 // import CallingFunction from './embedding-expression/CallingFunction'
 // import Conditional from './embedding-expression/Conditional'
 
+// import AxiosaPut from "./axios/AxiosaPut"
+import AxiosDelete from "./axios/AxiosDelete"
+
+// import TodoApp from "./works/TodoApp"
+
+// import AxiosPost from "./axios/AxiosPost"
+
+// import Login from "./session-storage/Login"
+
+// import AxiosGet from "./axios/AxiosGet"
+
 // import JobApplicationForm from "./works/JobApplicationForm"
 
-import Crud from "./Local-storage/Crud"
+// import Crud from "./Local-storage/Crud"
 
 // import Form from "./form/Form"
 
@@ -137,7 +148,21 @@ function App() {
 
           {/* -----local storage----- */}
        
-            <Crud/>
+            {/* <Crud/> */}
+
+
+            {/* ------axois------ */}
+            {/* <AxiosGet/> */}
+            {/* <AxiosaPut/> */}
+            <AxiosDelete/>
+{/* 
+            <Login/> */}
+            {/* <AxiosPost/> */}
+
+
+
+            {/* To do */}
+            {/* <TodoApp/> */}
  
 
       
